@@ -1,0 +1,25 @@
+# Global
+.DS_Store
+*.log
+*.swp
+*.swo
+.env
+.env.*
+
+# Node.js / Next.js
+node_module/  
+.next/
+out/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Docker
+**/Dockerfile
+**/docker-compose.yml
+**/.dockerignore
+
+

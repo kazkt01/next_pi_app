@@ -1,4 +1,6 @@
+from fastapi import FastAPI
 
+app = FastAPI()
 
 class Student:
     def __init__(self, id, name, score1, score2, score3, age):
@@ -10,14 +12,15 @@ class Student:
         self.age = age
 
     def avg(self):
-        avg = (self.score1 + self.score2 + self.score3) / 3
-        return avg
+        return (self.score1 + self.score2 + self.score3) / 3
 
-student_1 = Student(1,"tanaka",60,20,40.17, 18)
-print(f'{student_1.avg()}点です')
-
-
-
-
-
+@app.get("/")
+def get_student():
+    student_1 = Student(1, "tanaka", 60, 20, 40.17, 18)
+    return {
+        "id": student_1.id,
+        "name": student_1.name,
+        "average": student_1.avg(),
+        "age": student_1.age
+    }
 
